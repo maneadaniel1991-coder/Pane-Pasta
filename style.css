@@ -46,28 +46,11 @@ body {
   gap: 12px;
 }
 
-.logo-circle {
-  width: 42px;
-  height: 42px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: #fff;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  box-shadow: var(--shadow-soft);
-}
-
-.brand-name {
-  font-family: "Playfair Display", serif;
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-
-.brand-tagline {
-  font-size: 0.8rem;
-  color: var(--muted);
+/* New image logo */
+.logo-image {
+  height: 64px;
+  width: auto;
+  display: block;
 }
 
 .nav {
