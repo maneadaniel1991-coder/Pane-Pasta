@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact – Pane & Pasta</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Contact Pane & Pasta – questions about launch, office catering, or partnerships? Send us a message."
+  />
+
+  <link rel="canonical" href="https://paneandpasta.co.uk/contact" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="img/favicon-192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon-180.png" />
+  <meta name="theme-color" content="#C75B39" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Small extra styles for this page -->
+  <style>
+    :root {
+      --brand-bg: #c8b39a;
+      --brand-bg-dark: #b49c82;
+      --brand-text: #3b2f2f;
+      --brand-accent: #8a5a44;
+      --brand-white: #ffffff;
+    }
+
+    .contact-hero {
+      padding: 6rem 1.5rem 3rem;
+      background: linear-gradient(
+        145deg,
+        #f5e5d5 0%,
+        #e0c9b1 45%,
+        #d1bca3 100%
+      );
+    }
+
+    .contact-hero-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .contact-hero-text h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+      color: #322421;
+    }
+
+    .contact-hero-text p {
+      margin: 0.35rem 0;
+      color: #4a3730;
+      max-width: 32rem;
+    }
+
+    .contact-hero-panel {
+      background: #fdf8f2;
+      border-radius: 28px;
+      padding: 1.8rem 2rem;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.22);
+    }
+
+    /* Reuse contact form styles from index + overrides if needed */
+    .contact-form {
+      margin-top: 1.1rem;
+      max-width: 100%;
+    }
+
+    /* Floating button */
+    .fab-contact {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      padding: 0.75rem 1.1rem;
+      border-radius: 999px;
+      background: var(--brand-accent);
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      z-index: 9999;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .fab-contact:hover {
+      background: #734634;
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.3);
+    }
+
+    @media (max-width: 800px) {
+      .contact-hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .contact-hero {
+        padding-top: 5rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .fab-contact {
+        right: 14px;
+        bottom: 14px;
+        padding: 0.6rem 0.9rem;
+        font-size: 0.85rem;
+      }
+    }
+
+    /* Contact status + button (same as index) */
+    .contact-status {
+      margin-top: 0.7rem;
+      font-size: 0.85rem;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .contact-status.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .contact-status.ok {
+      color: #20603c;
+    }
+    .contact-status.error {
+      color: #8b1f1f;
+    }
+    .contact-submit.sent {
+      background: #20603c;
+    }
+    .contact-submit.sent::after {
+      content: " ✓";
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="logo-group">
+        <a href="index.html">
+          <img
+            src="img/logo-pane-pasta.png"
+            alt="Pane &amp; Pasta logo"
+            class="logo-image"
+          />
+        </a>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html#about">Our Story</a>
+        <a href="index.html#menu">What We Make</a>
+        <a href="index.html#stay-updated">Stay Updated</a>
+        <a href="contact.html" class="nav-cta">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="contact-hero">
+        <div class="contact-hero-inner">
+          <div class="contact-hero-text">
+            <h1>Let’s talk.</h1>
+            <p>
+              Whether you’re planning office lunches, a launch event,
+              or you’re just curious about Pane &amp; Pasta, we’d love to hear from you.
+            </p>
+            <p>
+              You can also email us directly at
+              <a href="mailto:paneandpastauk@gmail.com">paneandpastauk@gmail.com</a>
+              or DM us on Instagram
+              <a href="https://instagram.com/paneandpastauk" target="_blank">@paneandpastauk</a>.
+            </p>
+          </div>
+
+          <div class="contact-hero-panel">
+            <form id="contact-form" class="contact-form">
+              <div class="contact-row">
+                <div class="contact-field">
+                  <label for="contact-name">Name</label>
+                  <input
+                    type="text"
+                    id="contact-name"
+                    name="name"
+                    placeholder="Your name"
+                    required
+                  />
+                </div>
+
+                <div class="contact-field">
+                  <label for="contact-email">Email</label>
+                  <input
+                    type="email"
+                    id="contact-email"
+                    name="email"
+                    placeholder="you@example.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="contact-field">
+                <label for="contact-message">Message</label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  rows="5"
+                  placeholder="Tell us what you have in mind…"
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary contact-submit">
+                Send message
+              </button>
+
+              <p id="contact-status" class="contact-status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> Pane &amp; Pasta. All rights reserved.</div>
+      <div class="footer-small">
+        West London · Dark kitchen &amp; delivery-only concept (serving West &amp; Central London).
+      </div>
+      <div class="footer-small">
+        Contact:
+        <a href="mailto:paneandpastauk@gmail.com">paneandpastauk@gmail.com</a>
+      </div>
+      <div class="footer-small">
+        Instagram:
+        <a href="https://instagram.com/paneandpastauk" target="_blank">@paneandpastauk</a>
+      </div>
+    </footer>
+  </div>
+
+  <a href="#contact-form" class="fab-contact">Message us</a>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const CONTACT_ENDPOINT = "https://formspree.io/f/xldyyoyw";
+
+    const contactForm = document.getElementById("contact-form");
+    const contactStatus = document.getElementById("contact-status");
+    const contactButton = contactForm
+      ? contactForm.querySelector(".contact-submit")
+      : null;
+
+    function showStatus(message, type) {
+      if (!contactStatus) return;
+      contactStatus.textContent = message;
+      contactStatus.className = "contact-status " + type + " show";
+    }
+
+    function validateContactForm() {
+      const name = document.getElementById("contact-name").value.trim();
+      const email = document.getElementById("contact-email").value.trim();
+      const message = document.getElementById("contact-message").value.trim();
+
+      if (name.length < 2) {
+        showStatus("Please enter your name.", "error");
+        return false;
+      }
+
+      const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+      if (!emailRegex.test(email)) {
+        showStatus("Please enter a valid email address.", "error");
+        return false;
+      }
+
+      if (message.length < 10) {
+        showStatus(
+          "Please write at least a few words so we can help.",
+          "error"
+        );
+        return false;
+      }
+
+      return true;
+    }
+
+    if (contactForm && CONTACT_ENDPOINT) {
+      contactForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        if (!validateContactForm()) {
+          return;
+        }
+
+        showStatus("Sending…", "");
+        if (contactButton) {
+          contactButton.disabled = true;
+          contactButton.style.opacity = "0.8";
+        }
+
+        const formData = new FormData(contactForm);
+
+        try {
+          const resp = await fetch(CONTACT_ENDPOINT, {
+            method: "POST",
+            headers: { Accept: "application/json" },
+            body: formData,
+          });
+
+          if (resp.ok) {
+            showStatus("Thank you! Your message has been sent.", "ok");
+            contactForm.reset();
+
+            if (contactButton) {
+              contactButton.classList.add("sent");
+              contactButton.textContent = "Sent";
+              setTimeout(() => {
+                contactButton.disabled = false;
+                contactButton.style.opacity = "1";
+                contactButton.classList.remove("sent");
+                contactButton.textContent = "Send message";
+                contactStatus.className = "contact-status";
+              }, 4000);
+            }
+          } else {
+            showStatus(
+              "Something went wrong. Please try again, or email us directly at paneandpastauk@gmail.com.",
+              "error"
+            );
+            if (contactButton) {
+              contactButton.disabled = false;
+              contactButton.style.opacity = "1";
+            }
+          }
+        } catch (err) {
+          showStatus("Network error. Please try again shortly.", "error");
+          if (contactButton) {
+            contactButton.disabled = false;
+            contactButton.style.opacity = "1";
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>

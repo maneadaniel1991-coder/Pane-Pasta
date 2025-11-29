@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Pane & Pasta – a new Italian dark kitchen serving West & North-West London. Real Italian food made from scratch: fresh handmade pasta, Pugliese focaccia, seasonal menus, and office-focused delivery."
+    content="Pane & Pasta – a new Italian dark kitchen serving West & Central London. Real Italian food made from scratch: fresh handmade pasta, Pugliese focaccia, seasonal menus, and office-focused delivery."
   />
 
   <!-- Canonical + Open Graph URL -->
@@ -17,7 +17,7 @@
   <meta property="og:title" content="Pane & Pasta – Coming Soon" />
   <meta
     property="og:description"
-    content="Fresh handmade pasta and Pugliese focaccia, delivered to your office in West & North-West London."
+    content="Fresh handmade pasta and Pugliese focaccia, delivered to your office in West & Central London."
   />
   <meta property="og:type" content="website" />
   <meta
@@ -42,29 +42,8 @@
     rel="stylesheet"
   />
 
-  <!-- Extra inline styles: QR + Cookie banner theme -->
+  <!-- Extra inline styles -->
   <style>
-    /* QR block for Instagram */
-    .qr-instagram {
-      margin-top: 1.5rem;
-      text-align: center;
-    }
-
-    .qr-instagram-image {
-      max-width: 220px;
-      width: 60%;
-      height: auto;
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    }
-
-    .qr-caption {
-      margin-top: 0.75rem;
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
-
-    /* Brand colours for cookie banner (Mocha Mousse palette) */
     :root {
       --brand-bg: #c8b39a;
       --brand-bg-dark: #b49c82;
@@ -73,6 +52,267 @@
       --brand-white: #ffffff;
     }
 
+    /* HERO RIGHT CARD */
+    .hero-card {
+      background: #f4ebe0; /* light mocha / cream */
+      border-radius: 32px;
+      border: 1px solid rgba(139, 90, 68, 0.18);
+      padding: 2rem 2.2rem;
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.22);
+      color: var(--brand-text);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-sizing: border-box;
+      min-height: 260px;
+    }
+
+    .hero-card h2 {
+      margin: 0 0 0.6rem;
+      font-size: 1.3rem;
+    }
+
+    .hero-card p {
+      margin: 0.35rem 0;
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    .hero-card-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.8rem 0 0.9rem;
+      display: grid;
+      gap: 0.35rem;
+      font-size: 0.9rem;
+    }
+
+    .hero-card-list li::before {
+      content: "• ";
+      color: var(--brand-accent);
+      font-weight: 700;
+    }
+
+    .hero-card-divider {
+      margin: 0.7rem 0 0.6rem;
+      height: 1px;
+      background: rgba(139, 90, 68, 0.15);
+    }
+
+    .hero-card-strip {
+      font-size: 0.86rem;
+      font-weight: 600;
+      margin-top: 0.3rem;
+    }
+
+    .hero-card-strip span {
+      display: inline-block;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(200, 179, 154, 0.4);
+      margin: 0 0.12rem 0.2rem;
+    }
+
+    .hero-card-note {
+      font-size: 0.8rem;
+      opacity: 0.9;
+      margin-top: 0.55rem;
+    }
+
+    /* FORCE dark text inside card (in case of other CSS) */
+    .hero-card h2,
+    .hero-card p,
+    .hero-card li,
+    .hero-card-strip,
+    .hero-card-strip span,
+    .hero-card-note {
+      color: var(--brand-text) !important;
+    }
+
+    @media (max-width: 900px) {
+      .hero-card {
+        padding: 1.6rem 1.7rem;
+        min-height: auto;
+      }
+    }
+
+    /* QR block for Instagram */
+    .qr-instagram {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .qr-instagram-frame {
+      display: inline-block;
+      padding: 14px;
+      border-radius: 22px;
+      background: linear-gradient(
+        145deg,
+        rgba(200, 179, 154, 0.98),
+        rgba(180, 156, 130, 0.98)
+      );
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+    }
+
+    .qr-instagram-inner {
+      background: var(--brand-white);
+      border-radius: 18px;
+      padding: 10px;
+      box-shadow: inset 0 0 0 1px rgba(139, 90, 68, 0.06);
+    }
+
+    .qr-instagram-image {
+      max-width: 220px;
+      width: 60%;
+      height: auto;
+      border-radius: 18px;
+      display: block;
+      margin: 0 auto;
+      animation: qr-float 6s ease-in-out infinite;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .qr-instagram:hover .qr-instagram-image {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .qr-caption {
+      margin-top: 0.9rem;
+      font-size: 0.9rem;
+      opacity: 0.85;
+      color: var(--brand-text);
+    }
+
+    @keyframes qr-float {
+      0%, 100% {
+        transform: translateY(0);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
+      50 {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+      }
+    }
+
+    /* CONTACT FORM */
+    .contact-form {
+      margin-top: 1.5rem;
+      max-width: 640px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .contact-field {
+      flex: 1 1 240px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-field label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand-text);
+    }
+
+    .contact-field input,
+    .contact-field textarea {
+      border-radius: 12px;
+      border: 1px solid rgba(139, 90, 68, 0.25);
+      padding: 0.7rem 0.9rem;
+      font-size: 0.95rem;
+      font-family: "Poppins", system-ui, sans-serif;
+      background: #fffaf4;
+      outline: none;
+      color: var(--brand-text);
+    }
+
+    .contact-field input:focus,
+    .contact-field textarea:focus {
+      border-color: var(--brand-accent);
+      box-shadow: 0 0 0 2px rgba(138, 90, 68, 0.25);
+    }
+
+    .contact-submit {
+      margin-top: 0.2rem;
+      transition: background 0.2s ease, transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .contact-submit:active {
+      transform: translateY(1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    }
+
+    .contact-status {
+      margin-top: 0.7rem;
+      font-size: 0.85rem;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .contact-status.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .contact-status.ok {
+      color: #20603c;
+    }
+
+    .contact-status.error {
+      color: #8b1f1f;
+    }
+
+    .contact-submit.sent {
+      background: #20603c;
+    }
+
+    .contact-submit.sent::after {
+      content: " ✓";
+    }
+
+    /* Floating “Message us” button */
+    .fab-contact {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      padding: 0.75rem 1.1rem;
+      border-radius: 999px;
+      background: var(--brand-accent);
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+      z-index: 9999;
+      transition: transform 0.2s ease, box-shadow 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .fab-contact:hover {
+      background: #734634;
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 640px) {
+      .fab-contact {
+        right: 14px;
+        bottom: 14px;
+        padding: 0.6rem 0.9rem;
+        font-size: 0.85rem;
+      }
+    }
+
+    /* Cookie banner styles using brand palette */
     .cookie-banner {
       position: fixed;
       bottom: 20px;
@@ -231,7 +471,8 @@
       <nav class="nav">
         <a href="#about">Our Story</a>
         <a href="#menu">What We Make</a>
-        <a href="#stay-updated" class="nav-cta">Stay Updated</a>
+        <a href="#stay-updated">Stay Updated</a>
+        <a href="#contact" class="nav-cta">Contact</a>
       </nav>
     </header>
 
@@ -266,20 +507,22 @@
             <p>
               Pane &amp; Pasta is a new Italian dark kitchen in West London,
               run by Italians and focused on feeding teams across West &amp;
-              North-West London. We make everything from scratch, from
+              Central London. We make everything from scratch, from
               slow-simmered sauces to thick, fluffy focaccia from Puglia.
             </p>
             <p class="hero-sub">
-              Built for busy teams across
-              <strong>West and North-West London</strong> – and for anyone
-              within our delivery radius who craves proper Italian comfort food.
-              We deliver to offices, co-working spaces, homes and hotels, with
-              the same care at every door.
+              Built for busy teams in
+              <strong>West and Central London</strong> – and for anyone within
+              our delivery radius who craves proper Italian comfort food. We
+              deliver to offices, co-working spaces, homes and hotels, with the
+              same care at every door.
             </p>
 
             <div class="hero-actions">
               <a href="#stay-updated" class="btn-primary">Get launch updates</a>
-              <a href="#corporate" class="btn-ghost">Office &amp; corporate catering</a>
+              <a href="#corporate" class="btn-ghost"
+                >Office &amp; corporate catering</a
+              >
             </div>
 
             <div class="hero-note">
@@ -289,7 +532,9 @@
 
             <p class="hero-sub">
               Contact:
-              <a href="mailto:paneandpastauk@gmail.com">paneandpastauk@gmail.com</a>
+              <a href="mailto:paneandpastauk@gmail.com"
+                >paneandpastauk@gmail.com</a
+              >
               &middot; IG:
               <a href="https://instagram.com/paneandpastauk" target="_blank"
                 >@paneandpastauk</a
@@ -297,23 +542,44 @@
             </p>
           </div>
 
+          <!-- HERO CARD -->
           <div class="hero-card">
-            <h2>Launching January*</h2>
-            <p class="hero-card-sub">
-              *Approximate – depending on council approvals.
+            <h2>Built for offices in West &amp; Central London.</h2>
+            <p>
+              We specialise in feeding offices and co-working spaces – from
+              regular team lunches to larger meetings and launch events.
             </p>
-            <ul class="hero-list">
-              <li>Handmade pasta (tagliatelle, gnocchi &amp; more)</li>
-              <li>Pugliese focaccia trays to share or fill</li>
-              <li>Seasonal specials &amp; monthly menus</li>
-              <li>Office-friendly portions &amp; packaging</li>
+            <ul class="hero-card-list">
+              <li>Sharing trays for meetings and workshops</li>
+              <li>Individual portions for busy office days</li>
+              <li>Lunches for small teams and whole floors</li>
+              <li>Vegetarian &amp; vegan options available on request</li>
             </ul>
+
+            <div class="hero-card-divider"></div>
+
+            <p><strong>Our main delivery corridor:</strong></p>
+            <p class="hero-card-strip">
+              <span>Wembley</span>
+              <span>Park Royal</span>
+              <span>Gunnersbury</span>
+              <span>Hammersmith</span>
+              <span>Earl's Court</span>
+              <span>Victoria</span>
+              <span>Battersea</span>
+            </p>
+            <p class="hero-card-note">
+              If your office sits somewhere along or between these areas, there
+              is a very good chance we can reach you within our 7–8 mile
+              delivery radius. For specific postcodes or large events, drop us
+              an email and we’ll confirm coverage.
+            </p>
           </div>
         </div>
       </section>
 
       <section class="launch-cta">
-        <p class="launch-title">Launching soon in West &amp; North-West London</p>
+        <p class="launch-title">Launching soon in West &amp; Central London</p>
         <p class="launch-text">
           Follow us on Instagram
           (<a href="https://instagram.com/paneandpastauk" target="_blank"
@@ -337,7 +603,7 @@
             Pane &amp; Pasta starts as a
             <strong>dark kitchen in West London</strong>, focusing on office
             deliveries and corporate catering for teams across West &amp;
-            North-West London. Every sauce, every tray of focaccia and every
+            Central London. Every sauce, every tray of focaccia and every
             portion of fresh pasta is made from scratch by people who grew up
             with these recipes.
           </p>
@@ -364,7 +630,7 @@
           <p>
             We're starting from a dark kitchen in West London so we can focus on
             cooking instead of decor. We'll deliver to offices, co-working
-            spaces, homes and hotels across West &amp; North-West London – for
+            spaces, homes and hotels across West &amp; Central London – for
             anyone who wants real Italian comfort food without the fuss.
           </p>
 
@@ -556,8 +822,8 @@
                 <p>
                   We're finalising our dark kitchen in West London, perfecting
                   sauces, pasta shapes and focaccia dough, testing packaging and
-                  talking to local offices, co-working spaces and neighbours
-                  across West &amp; North-West London.
+                  talking to local offices, co-working spaces and neighbours in
+                  West &amp; Central London.
                 </p>
               </div>
             </div>
@@ -601,7 +867,7 @@
           <h2>Office lunches &amp; corporate catering.</h2>
           <p>
             Pane &amp; Pasta is built with teams in mind – from regular office
-            lunches to larger meetings and events across West &amp; North-West
+            lunches to larger meetings and events across West &amp; Central
             London. We’ll offer sharing trays, set menus and custom options for
             partners who order frequently.
           </p>
@@ -632,15 +898,13 @@
           <ul class="bullets">
             <li>Our exact launch date</li>
             <li>Exclusive opening discounts</li>
-            <li>Invites to tastings and pop-ups around West &amp; North-West London</li>
+            <li>
+              Invites to tastings and pop-ups around West &amp; Central London
+            </li>
           </ul>
 
-          <!-- TODO: replace FORM_ACTION_URL with AWS endpoint later -->
-          <form
-            class="signup-form"
-            action="FORM_ACTION_URL"
-            method="post"
-          >
+          <!-- TODO: wire to backend/newsletter endpoint later -->
+          <form class="signup-form" action="FORM_ACTION_URL" method="post">
             <input
               type="email"
               name="email"
@@ -657,15 +921,77 @@
             </a>
           </p>
 
-          <!-- Instagram QR block (ensure img/instagram-qr.png exists) -->
+          <!-- Instagram QR -->
           <div class="qr-instagram">
-            <img
-              src="img/instagram-qr.png"
-              alt="Scan to follow Pane &amp; Pasta on Instagram @paneandpastauk"
-              class="qr-instagram-image"
-            />
+            <div class="qr-instagram-frame">
+              <div class="qr-instagram-inner">
+                <img
+                  src="img/instagram-qr.png"
+                  alt="Scan to follow Pane &amp; Pasta on Instagram @paneandpastauk"
+                  class="qr-instagram-image"
+                />
+              </div>
+            </div>
             <p class="qr-caption">Scan to follow us on Instagram</p>
           </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section">
+        <div class="section-inner">
+          <h2>Contact us.</h2>
+          <p>
+            Questions about launch, office catering, or partnerships?
+            Send us a message and we’ll get back to you as soon as we can.
+          </p>
+
+          <form id="contact-form" class="contact-form">
+            <div class="contact-row">
+              <div class="contact-field">
+                <label for="contact-name">Name</label>
+                <input
+                  type="text"
+                  id="contact-name"
+                  name="name"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+
+              <div class="contact-field">
+                <label for="contact-email">Email</label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  placeholder="you@example.com"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="contact-field">
+              <label for="contact-message">Message</label>
+              <textarea
+                id="contact-message"
+                name="message"
+                rows="5"
+                placeholder="Tell us what you have in mind…"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary contact-submit">
+              Send message
+            </button>
+
+            <p
+              id="contact-status"
+              class="contact-status"
+              aria-live="polite"
+            ></p>
+          </form>
         </div>
       </section>
     </main>
@@ -673,7 +999,8 @@
     <footer class="footer">
       <div>© <span id="year"></span> Pane &amp; Pasta. All rights reserved.</div>
       <div class="footer-small">
-        West London · Dark kitchen &amp; delivery-only concept (serving West &amp; North-West London).
+        West London · Dark kitchen &amp; delivery-only concept (serving West
+        &amp; Central London).
       </div>
       <div class="footer-small">
         Contact:
@@ -688,9 +1015,112 @@
     </footer>
   </div>
 
+  <!-- Floating message button -->
+  <a href="#contact" class="fab-contact">Message us</a>
+
   <script>
-    // Set current year in footer
+    // footer year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Contact form logic (Formspree)
+    const CONTACT_ENDPOINT = "https://formspree.io/f/xldyyoyw";
+
+    const contactForm = document.getElementById("contact-form");
+    const contactStatus = document.getElementById("contact-status");
+    const contactButton = contactForm
+      ? contactForm.querySelector(".contact-submit")
+      : null;
+
+    function showStatus(message, type) {
+      if (!contactStatus) return;
+      contactStatus.textContent = message;
+      contactStatus.className = "contact-status " + type + " show";
+    }
+
+    function validateContactForm() {
+      const name = document.getElementById("contact-name").value.trim();
+      const email = document.getElementById("contact-email").value.trim();
+      const message = document.getElementById("contact-message").value.trim();
+
+      if (name.length < 2) {
+        showStatus("Please enter your name.", "error");
+        return false;
+      }
+
+      const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+      if (!emailRegex.test(email)) {
+        showStatus("Please enter a valid email address.", "error");
+        return false;
+      }
+
+      if (message.length < 10) {
+        showStatus(
+          "Please write at least a few words so we can help.",
+          "error"
+        );
+        return false;
+      }
+
+      return true;
+    }
+
+    if (contactForm && CONTACT_ENDPOINT) {
+      contactForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        if (!validateContactForm()) {
+          return;
+        }
+
+        showStatus("Sending…", "");
+        if (contactButton) {
+          contactButton.disabled = true;
+          contactButton.style.opacity = "0.8";
+        }
+
+        const formData = new FormData(contactForm);
+
+        try {
+          const resp = await fetch(CONTACT_ENDPOINT, {
+            method: "POST",
+            headers: { Accept: "application/json" },
+            body: formData,
+          });
+
+          if (resp.ok) {
+            showStatus("Thank you! Your message has been sent.", "ok");
+            contactForm.reset();
+
+            if (contactButton) {
+              contactButton.classList.add("sent");
+              contactButton.textContent = "Sent";
+              setTimeout(() => {
+                contactButton.disabled = false;
+                contactButton.style.opacity = "1";
+                contactButton.classList.remove("sent");
+                contactButton.textContent = "Send message";
+                contactStatus.className = "contact-status";
+              }, 4000);
+            }
+          } else {
+            showStatus(
+              "Something went wrong. Please try again, or email us directly at paneandpastauk@gmail.com.",
+              "error"
+            );
+            if (contactButton) {
+              contactButton.disabled = false;
+              contactButton.style.opacity = "1";
+            }
+          }
+        } catch (err) {
+          showStatus("Network error. Please try again shortly.", "error");
+          if (contactButton) {
+            contactButton.disabled = false;
+            contactButton.style.opacity = "1";
+          }
+        }
+      });
+    }
   </script>
 
   <!-- Cookie Consent Banner -->
