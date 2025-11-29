@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Policy - Pane Pasta</title>
+    <link rel="stylesheet" href="css/cookies.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; margin-top: 30px; }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #3498db;
+            text-decoration: none;
+        }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+        
+        <h1>Cookie Policy</h1>
+        <p><strong>Last updated:</strong> <span id="current-date"></span></p>
+        
+        <h2>What Are Cookies?</h2>
+        <p>Cookies are small text files that are stored on your device when you visit our website. They help us provide you with a better experience by remembering your preferences and analyzing how you use our site.</p>
+        
+        <h2>Types of Cookies We Use</h2>
+        
+        <h3>Necessary Cookies</h3>
+        <p>These cookies are essential for our website to function properly. They enable basic features like page navigation and access to secure areas of the website.</p>
+        
+        <h3>Functional Cookies</h3>
+        <p>These cookies remember choices you make (such as your preferred theme or language) to provide enhanced, more personal features.</p>
+        
+        <h3>Analytics Cookies</h3>
+        <p>We use these cookies to understand how visitors interact with our website. This helps us improve our site and provide better content.</p>
+        
+        <h3>Marketing Cookies</h3>
+        <p>These cookies track your online activity to help advertisers deliver more relevant advertising or to limit how many times you see an ad.</p>
+        
+        <h2>Managing Your Cookie Preferences</h2>
+        <p>You can manage your cookie preferences at any time by:</p>
+        <ul>
+            <li>Using our cookie preference center</li>
+            <li>Adjusting your browser settings</li>
+            <li>Clearing your browser's cookie storage</li>
+        </ul>
+        
+        <button onclick="window.cookieConsent?.openSettingsModal()" class="cookie-btn btn-settings">
+            Manage Cookie Preferences
+        </button>
+        
+        <h2>Contact Us</h2>
+        <p>If you have any questions about our use of cookies, please contact us at: info@panepasta.com</p>
+    </div>
+    
+    <script>
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString();
+    </script>
+    <script src="js/cookies.js"></script>
+</body>
+</html>

@@ -4,29 +4,221 @@
   <meta charset="UTF-8" />
   <title>Pane & Pasta – Authentic Italian, Coming Soon</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Pane & Pasta – a new Italian dark kitchen in Hammersmith, London. Real Italian food made from scratch: fresh handmade pasta, Pugliese focaccia, seasonal menus, and office-focused delivery." />
+  <meta
+    name="description"
+    content="Pane & Pasta – a new Italian dark kitchen serving West & North-West London. Real Italian food made from scratch: fresh handmade pasta, Pugliese focaccia, seasonal menus, and office-focused delivery."
+  />
+
+  <!-- Canonical + Open Graph URL -->
+  <link rel="canonical" href="https://paneandpasta.co.uk/" />
+  <meta property="og:url" content="https://paneandpasta.co.uk/" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Pane & Pasta – Coming Soon" />
-  <meta property="og:description" content="Fresh handmade pasta and Pugliese focaccia, delivered to your office in Hammersmith." />
+  <meta
+    property="og:description"
+    content="Fresh handmade pasta and Pugliese focaccia, delivered to your office in West & North-West London."
+  />
   <meta property="og:type" content="website" />
-  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="img/favicon-192.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon-180.png" />
-  <meta name="theme-color" content="#C75B39" />
-  <meta property="og:image" content="https://maneadaniel1991-coder.github.io/Pane-Pasta/img/social-preview-1200x630.png" />
+  <meta
+    property="og:image"
+    content="https://maneadaniel1991-coder.github.io/Pane-Pasta/img/social-preview-1200x630.png"
+  />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="img/favicon-192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon-180.png" />
+  <meta name="theme-color" content="#C75B39" />
+
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/cookies.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Extra inline styles: QR + Cookie banner theme -->
+  <style>
+    /* QR block for Instagram */
+    .qr-instagram {
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+
+    .qr-instagram-image {
+      max-width: 220px;
+      width: 60%;
+      height: auto;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .qr-caption {
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* Brand colours for cookie banner (Mocha Mousse palette) */
+    :root {
+      --brand-bg: #c8b39a;
+      --brand-bg-dark: #b49c82;
+      --brand-text: #3b2f2f;
+      --brand-accent: #8a5a44;
+      --brand-white: #ffffff;
+    }
+
+    .cookie-banner {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 92%;
+      max-width: 520px;
+      background: var(--brand-bg);
+      color: var(--brand-text);
+      border-radius: 16px;
+      padding: 22px 26px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      z-index: 99999;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .cookie-content {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .cookie-text h3 {
+      margin: 0;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--brand-text);
+    }
+
+    .cookie-text p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--brand-text);
+    }
+
+    .cookie-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .cookie-btn {
+      flex: 1;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: none;
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .btn-accept {
+      background: var(--brand-accent);
+      color: var(--brand-white);
+    }
+
+    .btn-accept:hover {
+      background: #734634;
+    }
+
+    .btn-reject {
+      background: var(--brand-bg-dark);
+      color: var(--brand-text);
+    }
+
+    .btn-settings {
+      background: var(--brand-white);
+      color: var(--brand-text);
+      border: 1px solid var(--brand-bg-dark);
+    }
+
+    .cookie-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 999999;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .cookie-modal-content {
+      background: var(--brand-bg);
+      color: var(--brand-text);
+      width: 95%;
+      max-width: 540px;
+      padding: 28px;
+      border-radius: 18px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-header h2 {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+
+    .close-cookie-modal {
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--brand-text);
+    }
+
+    .modal-body p {
+      font-size: 0.95rem;
+      margin-top: 10px;
+    }
+
+    .cookie-category {
+      margin-top: 20px;
+    }
+
+    .category-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .category-title {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .category-description {
+      font-size: 0.85rem;
+      opacity: 0.8;
+      margin-top: 6px;
+    }
+
+    .modal-footer {
+      margin-top: 25px;
+      text-align: right;
+    }
+  </style>
 </head>
+
 <body>
   <div class="page">
-
     <header class="header">
       <div class="logo-group">
         <img
@@ -46,7 +238,14 @@
     <main>
       <!-- HERO -->
       <section class="hero">
-        <video class="hero-video" autoplay muted loop playsinline poster="img/video/bolognese.jpg">
+        <video
+          class="hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="img/video/bolognese.jpg"
+        >
           <source src="img/video/bolognese.webm" type="video/webm" />
           <source src="img/video/bolognese.mp4" type="video/mp4" />
         </video>
@@ -55,18 +254,27 @@
 
         <div class="hero-content">
           <div class="hero-text">
-          <div class="brand-header">
-            <div class="brand-name">Pane &amp; Pasta&trade;</div>
-            <div class="brand-tagline">Real Italian flavours. Fresh pasta made daily.</div>
-          </div>
-            <h1>Fresh pasta, Pugliese focaccia<br />delivered to your office.</h1>
+            <div class="brand-header">
+              <div class="brand-name">Pane &amp; Pasta&trade;</div>
+              <div class="brand-tagline">
+                Real Italian flavours. Fresh pasta made daily.
+              </div>
+            </div>
+            <h1>
+              Fresh pasta, Pugliese focaccia<br />delivered to your office.
+            </h1>
             <p>
-              Pane &amp; Pasta is a new Italian dark kitchen in Hammersmith, run by Italians.
-              We make everything from scratch, from slow-simmered sauces to thick, fluffy focaccia from Puglia.
+              Pane &amp; Pasta is a new Italian dark kitchen in West London,
+              run by Italians and focused on feeding teams across West &amp;
+              North-West London. We make everything from scratch, from
+              slow-simmered sauces to thick, fluffy focaccia from Puglia.
             </p>
             <p class="hero-sub">
-              Built for busy teams within a <strong>5-6 mile radius</strong> of Hammersmith - and for anyone nearby who craves proper Italian comfort food.
-              We deliver to offices, co-working spaces, homes and hotels, with the same care at every door.
+              Built for busy teams across
+              <strong>West and North-West London</strong> – and for anyone
+              within our delivery radius who craves proper Italian comfort food.
+              We deliver to offices, co-working spaces, homes and hotels, with
+              the same care at every door.
             </p>
 
             <div class="hero-actions">
@@ -75,22 +283,25 @@
             </div>
 
             <div class="hero-note">
-              Food designed to travel well, arrive hot, and still taste like a real Italian restaurant ??" not a factory.
+              Food designed to travel well, arrive hot, and still taste like a
+              real Italian restaurant – not a factory.
             </div>
 
-            <!-- NEW: contact + IG in hero -->
             <p class="hero-sub">
               Contact:
               <a href="mailto:paneandpastauk@gmail.com">paneandpastauk@gmail.com</a>
-              &middot;
-              IG:
-              <a href="https://instagram.com/paneandpastauk" target="_blank">@paneandpastauk</a>
+              &middot; IG:
+              <a href="https://instagram.com/paneandpastauk" target="_blank"
+                >@paneandpastauk</a
+              >
             </p>
           </div>
 
           <div class="hero-card">
             <h2>Launching January*</h2>
-            <p class="hero-card-sub">*Approximate ??" depending on council approvals.</p>
+            <p class="hero-card-sub">
+              *Approximate – depending on council approvals.
+            </p>
             <ul class="hero-list">
               <li>Handmade pasta (tagliatelle, gnocchi &amp; more)</li>
               <li>Pugliese focaccia trays to share or fill</li>
@@ -102,9 +313,13 @@
       </section>
 
       <section class="launch-cta">
-        <p class="launch-title">Launching January in Hammersmith</p>
+        <p class="launch-title">Launching soon in West &amp; North-West London</p>
         <p class="launch-text">
-          Follow us on Instagram (<a href="https://instagram.com/paneandpastauk" target="_blank">@paneandpastauk</a>) for behind-the-scenes, tastings and early-bird discounts.
+          Follow us on Instagram
+          (<a href="https://instagram.com/paneandpastauk" target="_blank"
+            >@paneandpastauk</a
+          >)
+          for behind-the-scenes, tastings and early-bird discounts.
         </p>
       </section>
 
@@ -113,37 +328,53 @@
         <div class="section-inner">
           <h2>From Italian kitchens to London offices.</h2>
           <p>
-            After years cooking in Italian kitchens and running high-volume restaurants in London,
-            we wanted to strip things back to what really matters: honest recipes, proper technique, and food that still tastes like Italy when it reaches your desk.
+            After years cooking in Italian kitchens and running high-volume
+            restaurants in London, we wanted to strip things back to what really
+            matters: honest recipes, proper technique, and food that still
+            tastes like Italy when it reaches your desk.
           </p>
           <p>
-            Pane &amp; Pasta starts as a <strong>dark kitchen in Hammersmith</strong>, focusing on office deliveries and corporate catering.
-            Every sauce, every tray of focaccia and every portion of fresh pasta is made from scratch by people who grew up with these recipes.
+            Pane &amp; Pasta starts as a
+            <strong>dark kitchen in West London</strong>, focusing on office
+            deliveries and corporate catering for teams across West &amp;
+            North-West London. Every sauce, every tray of focaccia and every
+            portion of fresh pasta is made from scratch by people who grew up
+            with these recipes.
           </p>
         </div>
       </section>
+
       <section id="founders" class="section">
         <div class="section-inner">
           <h2>Two Italians, one very hungry city.</h2>
           <p>
-            Pane &amp; Pasta was born from two Italians who grew up with Nonna's kitchen as the centre of the house:
-            a wooden table, a pot of sauce that never really left the stove, and people constantly arriving hungry.
-            Moving to London, we saw how often food is rushed, over-complicated or made far away from the kitchen that serves it.
+            Pane &amp; Pasta was born from two Italians who grew up with Nonna's
+            kitchen as the centre of the house: a wooden table, a pot of sauce
+            that never really left the stove, and people constantly arriving
+            hungry. Moving to London, we saw how often food is rushed,
+            over-complicated or made far away from the kitchen that serves it.
           </p>
           <p>
-            Our dream is simple: take the kind of food our Nonne would proudly put on the Sunday table - slow-simmered ragu,
-            fluffy focaccia and bowls of pasta that actually fill you - and make it reachable on a normal lunch break,
-            a Tuesday night on the sofa or a weekend with friends.
+            Our dream is simple: take the kind of food our Nonne would proudly
+            put on the Sunday table – slow-simmered ragu, fluffy focaccia and
+            bowls of pasta that actually fill you – and make it reachable on a
+            normal lunch break, a Tuesday night on the sofa or a weekend with
+            friends.
           </p>
           <p>
-            We're starting in a dark kitchen in Hammersmith so we can focus on cooking instead of decor.
-            We'll deliver to offices, co-working spaces, homes and hotels in the area - anyone who wants real Italian comfort food without the fuss.
+            We're starting from a dark kitchen in West London so we can focus on
+            cooking instead of decor. We'll deliver to offices, co-working
+            spaces, homes and hotels across West &amp; North-West London – for
+            anyone who wants real Italian comfort food without the fuss.
           </p>
 
           <ul class="bullets">
             <li>Real ingredients, cooked in small batches.</li>
             <li>Menus that change with the seasons.</li>
-            <li>Food that feels homemade, even from a delivery bag.</li>
+            <li>
+              Food that feels homemade, even from a delivery bag – with
+              vegetarian and vegan options available on request.
+            </li>
           </ul>
         </div>
       </section>
@@ -157,37 +388,47 @@
             <div class="card">
               <h3>Fresh Pasta</h3>
               <p>
-                Tagliatelle, gnocchi and more, paired with slow-cooked ragù, creamy sauces and seasonal specials.
-                Built to arrive al dente, not soggy.
+                Tagliatelle, gnocchi and more, paired with slow-cooked ragù,
+                creamy sauces and seasonal specials. Built to arrive al dente,
+                not soggy.
               </p>
             </div>
             <div class="card">
               <h3>Pane from Puglia</h3>
               <p>
-                Thick, airy focaccia baked in trays, sliced and filled with salumi, burrata, grilled veg or kept simple with olive oil &amp; rosemary.
+                Thick, airy focaccia baked in trays, sliced and filled with
+                salumi, burrata, grilled veg or kept simple with olive oil
+                &amp; rosemary.
               </p>
             </div>
             <div class="card">
               <h3>Dolci &amp; Extras</h3>
               <p>
-                A small but mighty dessert list and rotating extras – from tiramisù to seasonal soups for cold London days.
+                A small but mighty dessert list and rotating extras – from
+                tiramisù to seasonal soups for cold London days.
               </p>
             </div>
           </div>
 
           <p class="section-note">
-            We’ll shape the menu with feedback from our first customers, adding monthly specials and seasonal dishes as we grow.
+            We’ll shape the menu with feedback from our first customers, adding
+            monthly specials and seasonal dishes as we grow. Vegetarian and
+            vegan options are always available on request, especially for larger
+            and corporate orders.
           </p>
         </div>
       </section>
+
       <section class="our-story">
-        <h2>Our story begins in Hammersmith</h2>
+        <h2>Our story begins in West London</h2>
         <p>
-          Pane &amp; Pasta&trade; is born in a small dark kitchen in Hammersmith,
-          where real Italian chefs make everything from scratch - from fresh pasta to slow-cooked sauces and thick Pugliese focaccia.
+          Pane &amp; Pasta&trade; is born in a small dark kitchen in West
+          London, where real Italian chefs make everything from scratch – from
+          fresh pasta to slow-cooked sauces and thick Pugliese focaccia.
         </p>
         <p>
-          We keep the menu small, seasonal and honest, so every dish feels like a plate you'd be served in an Italian home.
+          We keep the menu small, seasonal and honest, so every dish feels like
+          a plate you'd be served in an Italian home.
         </p>
       </section>
 
@@ -195,73 +436,128 @@
         <div class="section-inner kitchen">
           <h2>Inside the kitchen.</h2>
           <p>
-            We keep things simple: slow sauces, fresh pasta and just enough technology to help our hands -
-            not replace them. Here's a peek at how Pane &amp; Pasta dishes come to life before they land on your table.
+            We keep things simple: slow sauces, fresh pasta and just enough
+            technology to help our hands – not replace them. Here's a peek at
+            how Pane &amp; Pasta dishes come to life before they land on your
+            table.
           </p>
 
           <div class="kitchen-grid">
             <figure class="kitchen-video-card">
               <div class="kitchen-video-frame">
-                <video class="kitchen-video" autoplay muted loop playsinline poster="img/video/tagliatelle.jpg">
+                <video
+                  class="kitchen-video"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  poster="img/video/tagliatelle.jpg"
+                >
                   <source src="img/video/tagliatelle.webm" type="video/webm" />
                   <source src="img/video/tagliatelle.mp4" type="video/mp4" />
                 </video>
               </div>
               <figcaption>
                 <h3>Fresh Tagliatelle</h3>
-                <p>Fresh tagliatelle being cut &ndash; the base for creamy sauces, made in small batches.</p>
-                <p class="video-microcopy">Crafted in small batches with semolina, eggs and Italian tradition.</p>
-                <p class="video-microcopy">Hand-cut strands designed to hold every drop of sauce.</p>
+                <p>
+                  Fresh tagliatelle being cut – the base for creamy sauces, made
+                  in small batches.
+                </p>
+                <p class="video-microcopy">
+                  Crafted in small batches with semolina, eggs and Italian
+                  tradition.
+                </p>
+                <p class="video-microcopy">
+                  Hand-cut strands designed to hold every drop of sauce.
+                </p>
               </figcaption>
             </figure>
 
             <figure class="kitchen-video-card">
               <div class="kitchen-video-frame">
-                <video class="kitchen-video" autoplay muted loop playsinline poster="img/video/gnocchi-bolognese.jpg">
-                  <source src="img/video/gnocchi-bolognese.webm" type="video/webm" />
-                  <source src="img/video/gnocchi-bolognese.mp4" type="video/mp4" />
+                <video
+                  class="kitchen-video"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  poster="img/video/gnocchi-bolognese.jpg"
+                >
+                  <source
+                    src="img/video/gnocchi-bolognese.webm"
+                    type="video/webm"
+                  />
+                  <source
+                    src="img/video/gnocchi-bolognese.mp4"
+                    type="video/mp4"
+                  />
                 </video>
               </div>
               <figcaption>
                 <h3>Pillowy Gnocchi</h3>
-                <p>Soft, pillowy gnocchi tossed in our signature sauce, captured in slow motion.</p>
-                <p class="video-microcopy">Light, fluffy and indulgent &ndash; just like at an Italian nonna's table.</p>
+                <p>
+                  Soft, pillowy gnocchi tossed in our signature sauce, captured
+                  in slow motion.
+                </p>
+                <p class="video-microcopy">
+                  Light, fluffy and indulgent – just like at an Italian nonna's
+                  table.
+                </p>
               </figcaption>
             </figure>
 
             <figure class="kitchen-video-card">
               <div class="kitchen-video-frame">
-                <video class="kitchen-video" autoplay muted loop playsinline poster="img/video/bolognese.jpg">
+                <video
+                  class="kitchen-video"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  poster="img/video/bolognese.jpg"
+                >
                   <source src="img/video/bolognese.webm" type="video/webm" />
                   <source src="img/video/bolognese.mp4" type="video/mp4" />
                 </video>
               </div>
               <figcaption>
                 <h3>Slow-cooked Bolognese</h3>
-                <p>Our house bolognese, gently simmered for hours until rich, silky and full of flavour.</p>
-                <p class="video-microcopy">Inspired by the kitchens of Emilia-Romagna, made in small batches every day.</p>
+                <p>
+                  Our house bolognese, gently simmered for hours until rich,
+                  silky and full of flavour.
+                </p>
+                <p class="video-microcopy">
+                  Inspired by the kitchens of Emilia-Romagna, made in small
+                  batches every day.
+                </p>
               </figcaption>
             </figure>
           </div>
         </div>
       </section>
+
       <section id="timeline" class="section section-alt">
         <div class="section-inner timeline">
           <h2>How we're rolling out Pane &amp; Pasta.</h2>
           <p>
-            We're opening step by step so we can listen, improve and grow with the neighbourhood.
-            From offices to homes, our launch journey is designed to keep things personal and under control.
+            We're opening step by step so we can listen, improve and grow with
+            the neighbourhood. From offices to homes, our launch journey is
+            designed to keep things personal and under control.
           </p>
 
           <div class="timeline-steps">
             <div class="timeline-step">
               <div class="timeline-step-dot"></div>
               <div class="timeline-step-content">
-                <div class="timeline-step-label">Step 1 - Behind the scenes</div>
+                <div class="timeline-step-label">
+                  Step 1 - Behind the scenes
+                </div>
                 <h3>Testing, tasting &amp; fine-tuning.</h3>
                 <p>
-                  We're finalising our dark kitchen in Hammersmith, perfecting sauces, pasta shapes and focaccia dough,
-                  testing packaging and talking to local offices, co-working spaces and neighbours.
+                  We're finalising our dark kitchen in West London, perfecting
+                  sauces, pasta shapes and focaccia dough, testing packaging and
+                  talking to local offices, co-working spaces and neighbours
+                  across West &amp; North-West London.
                 </p>
               </div>
             </div>
@@ -272,8 +568,10 @@
                 <div class="timeline-step-label">Step 2 - Soft launch</div>
                 <h3>Limited hours, full flavour.</h3>
                 <p>
-                  We'll start with a focused menu and limited delivery hours so we can stay close to every order.
-                  Expect office lunches, shared trays for meetings and individual deliveries to nearby homes and hotels.
+                  We'll start with a focused menu and limited delivery hours so
+                  we can stay close to every order. Expect office lunches,
+                  shared trays for meetings and individual deliveries to nearby
+                  homes and hotels.
                 </p>
               </div>
             </div>
@@ -281,11 +579,15 @@
             <div class="timeline-step">
               <div class="timeline-step-dot"></div>
               <div class="timeline-step-content">
-                <div class="timeline-step-label">Step 3 - Full service &amp; growth</div>
+                <div class="timeline-step-label">
+                  Step 3 - Full service &amp; growth
+                </div>
                 <h3>More hours, more dishes, more people fed.</h3>
                 <p>
-                  Once the foundations are solid, we'll extend our hours, add seasonal dishes and build long-term catering partnerships -
-                  while staying open to anyone in the area who simply wants a bowl of proper pasta or a slice of warm focaccia.
+                  Once the foundations are solid, we'll extend our hours, add
+                  seasonal dishes and build long-term catering partnerships –
+                  while staying open to anyone in the area who simply wants a
+                  bowl of proper pasta or a slice of warm focaccia.
                 </p>
               </div>
             </div>
@@ -298,11 +600,20 @@
         <div class="section-inner">
           <h2>Office lunches &amp; corporate catering.</h2>
           <p>
-            Pane &amp; Pasta is built with teams in mind – from regular office lunches to larger meetings and events.
-            We’ll offer sharing trays, set menus and custom options for partners who order frequently.
+            Pane &amp; Pasta is built with teams in mind – from regular office
+            lunches to larger meetings and events across West &amp; North-West
+            London. We’ll offer sharing trays, set menus and custom options for
+            partners who order frequently.
           </p>
           <p>
-            If you’re an office manager or you plan events for your company, drop us a line and we’ll keep you in the loop for tastings and launch offers.
+            We can design menus around your team: including vegetarian and vegan
+            options on request, as well as solutions for common dietary and
+            allergen requirements, so everyone around the table is looked after.
+          </p>
+          <p>
+            If you’re an office manager or you plan events for your company,
+            drop us a line and we’ll keep you in the loop for tastings, launch
+            offers and tailored corporate menus.
           </p>
           <a
             class="inline-link"
@@ -321,11 +632,21 @@
           <ul class="bullets">
             <li>Our exact launch date</li>
             <li>Exclusive opening discounts</li>
-            <li>Invites to tastings and pop-ups around Hammersmith</li>
+            <li>Invites to tastings and pop-ups around West &amp; North-West London</li>
           </ul>
 
-          <form class="signup-form" action="https://example.com/subscribe" method="post">
-            <input type="email" name="email" placeholder="your@email.com" required />
+          <!-- TODO: replace FORM_ACTION_URL with AWS endpoint later -->
+          <form
+            class="signup-form"
+            action="FORM_ACTION_URL"
+            method="post"
+          >
+            <input
+              type="email"
+              name="email"
+              placeholder="your@email.com"
+              required
+            />
             <button type="submit">Notify me</button>
           </form>
 
@@ -335,6 +656,16 @@
               <strong>@paneandpastauk</strong>
             </a>
           </p>
+
+          <!-- Instagram QR block (ensure img/instagram-qr.png exists) -->
+          <div class="qr-instagram">
+            <img
+              src="img/instagram-qr.png"
+              alt="Scan to follow Pane &amp; Pasta on Instagram @paneandpastauk"
+              class="qr-instagram-image"
+            />
+            <p class="qr-caption">Scan to follow us on Instagram</p>
+          </div>
         </div>
       </section>
     </main>
@@ -342,7 +673,7 @@
     <footer class="footer">
       <div>© <span id="year"></span> Pane &amp; Pasta. All rights reserved.</div>
       <div class="footer-small">
-        Hammersmith · London · Dark kitchen &amp; delivery-only concept.
+        West London · Dark kitchen &amp; delivery-only concept (serving West &amp; North-West London).
       </div>
       <div class="footer-small">
         Contact:
@@ -350,7 +681,9 @@
       </div>
       <div class="footer-small">
         Instagram:
-        <a href="https://instagram.com/paneandpastauk" target="_blank">@paneandpastauk</a>
+        <a href="https://instagram.com/paneandpastauk" target="_blank"
+          >@paneandpastauk</a
+        >
       </div>
     </footer>
   </div>
@@ -359,14 +692,89 @@
     // Set current year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner" class="cookie-banner" style="display: none;">
+    <div class="cookie-content">
+      <div class="cookie-text">
+        <h3>🍪 We Use Cookies</h3>
+        <p>
+          We use cookies to improve your browsing and personalise content. You
+          can choose what to allow.
+        </p>
+      </div>
+      <div class="cookie-buttons">
+        <button id="accept-all-cookies" class="cookie-btn btn-accept">
+          Accept All
+        </button>
+        <button id="reject-all-cookies" class="cookie-btn btn-reject">
+          Reject All
+        </button>
+        <button id="cookie-settings-btn" class="cookie-btn btn-settings">
+          Settings
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Settings Modal -->
+  <div id="cookie-settings-modal" class="cookie-modal">
+    <div class="cookie-modal-content">
+      <div class="modal-header">
+        <h2>Cookie Preferences</h2>
+        <button class="close-cookie-modal" id="close-cookie-modal">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Select which cookies you want to allow.</p>
+
+        <div class="cookie-category">
+          <div class="category-header">
+            <span class="category-title">Necessary Cookies</span>
+            <input type="checkbox" checked disabled />
+          </div>
+          <p class="category-description">
+            Essential for the website to function.
+          </p>
+        </div>
+
+        <div class="cookie-category">
+          <div class="category-header">
+            <span class="category-title">Functional Cookies</span>
+            <input type="checkbox" id="functional-cookies" />
+          </div>
+          <p class="category-description">Store your preferences.</p>
+        </div>
+
+        <div class="cookie-category">
+          <div class="category-header">
+            <span class="category-title">Analytics Cookies</span>
+            <input type="checkbox" id="analytics-cookies" />
+          </div>
+          <p class="category-description">
+            Help us understand visitor interactions.
+          </p>
+        </div>
+
+        <div class="cookie-category">
+          <div class="category-header">
+            <span class="category-title">Marketing Cookies</span>
+            <input type="checkbox" id="marketing-cookies" />
+          </div>
+          <p class="category-description">Used for personalised ads.</p>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="save-cookie-preferences" class="cookie-btn btn-accept">
+          Save Preferences
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie logic -->
+  <script src="js/cookies.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
